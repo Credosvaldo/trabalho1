@@ -1,0 +1,89 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.manifest
+*.spec
+*.log
+*.pot
+*.mo
+*.env
+.venv/
+venv/
+ENV/
+env/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
+
+# Test and coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# mypy
+.mypy_cache/
+.dmypy.json
+
+# Pyre
+.pyre/
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pyenv
+.python-version
+
+# pytest
+.pytest_cache/
+
+# Django
+*.log
+local_settings.py
+
+# Flask
+instance/
+.webassets-cache
+
+# Scrapy
+.scrapy
+
+# Sphinx
+docs/_build/
+
+# PyInstaller
+*.spec
+
+# Unit test / coverage reports
+*.cover
+*.py,cover
+
+# Translations
+*.mo
+*.pot
+
+# Cython debug symbols
+cython_debug/
