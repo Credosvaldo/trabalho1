@@ -87,3 +87,6 @@ docs/_build/
 
 # Cython debug symbols
 cython_debug/
+
+
+main.py
