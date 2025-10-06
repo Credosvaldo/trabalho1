@@ -34,5 +34,32 @@ class TestCalculadora(unittest.TestCase):
         self.assertEqual(multiplicacao(-3, 2), -6)
 
 
+    # Casos de Teste - Operação: Subtração 
+    def test_S1_equal_operands(self):
+        """S1: Subtração de dois operandos iguais deve resultar em zero"""
+        self.assertEqual(subtracao(5, 5), 0)
+
+    def test_S2_floats_precision(self):
+        """S2: Subtração com floats (usar assertAlmostEqual para precisão)"""
+        self.assertAlmostEqual(subtracao(2.5, 1.1), 1.4, places=7)
+
+    def test_S3_large_numbers(self):
+        """S3: Subtração com números grandes"""
+        self.assertEqual(subtracao(10**9, 1), 999999999)
+
+    def test_S4_small_minus_large(self):
+        """S4: Subtração onde o primeiro operando é menor que o segundo"""
+        self.assertEqual(subtracao(1, 100), -99)
+
+    def test_S5_negative_and_float(self):
+        """S5: Subtração envolvendo números negativos e floats"""
+        self.assertAlmostEqual(subtracao(-2.5, -1.25), -1.25, places=7)
+
+    def test_S6_antisymmetry(self):
+        """S6: Propriedade antissimétrica: a - b == -(b - a)"""
+        a, b = 7, 3
+        self.assertEqual(subtracao(a, b), -subtracao(b, a))
+
+
 if __name__ == "__main__":
     unittest.main()
