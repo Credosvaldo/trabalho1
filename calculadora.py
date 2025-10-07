@@ -14,3 +14,9 @@ def divisao(a, b):
 
 def potencia(a, b):
     return a ** b
+
+def raiz_quadrada(a):
+    if a < 0:
+        raise ValueError("Raiz quadrada de número negativo não permitida")
+    return a ** 0.5
+    
