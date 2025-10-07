@@ -1,5 +1,6 @@
+import math
 import unittest
-from calculadora import soma, subtracao, multiplicacao, divisao
+from calculadora import soma, subtracao, multiplicacao, divisao, raiz_quadrada, potencia
 
 class TestCalculadora(unittest.TestCase):
     def test_divisao(self):
@@ -105,6 +106,51 @@ class TestCalculadora(unittest.TestCase):
     def test_R6_perfect_square(self):
         """R6: Raiz quadrada de número que é um quadrado perfeito"""
         self.assertEqual(raiz_quadrada(49), 7)
+        
+        
+    # Casos de Teste - Operação: soma      
+    def test_soma_inteiros_positivos(self):
+        """SO1: Testa a soma de dois inteiros positivos."""
+        self.assertEqual(soma(5, 10), 15)
+
+    def test_soma_inteiros_negativos(self):
+        """SO2: Testa a soma de dois inteiros negativos."""
+        self.assertEqual(soma(-5, -10), -15)
+
+    def test_soma_sinais_mistos(self):
+        """SO3: Testa a soma de números com sinais diferentes."""
+        self.assertEqual(soma(20, -5), 15)
+
+    def test_soma_sinais_mistos_anulacao(self):
+        """SO4: Testa a soma de números simétricos que resulta em zero."""
+        self.assertEqual(soma(10, -10), 0)
+
+    def test_soma_com_elemento_neutro_zero(self):
+        """SO5: Testa a propriedade do zero como elemento neutro."""
+        self.assertEqual(soma(7, 0), 7)
+        self.assertEqual(soma(0, 7), 7)
+
+    def test_soma_ponto_flutuante(self):
+        """SO6: Testa a soma de números de ponto flutuante."""
+        self.assertEqual(soma(2.5, 3.5), 6.0)
+
+    def test_limite_precisao_float(self):
+        """SO7: Testa a imprecisão da aritmética de ponto flutuante"""
+        self.assertAlmostEqual(soma(0.1, 0.2), 0.3)
+
+    def test_limite_overflow_float(self):
+        """SO8: Testa o comportamento de overflow para o tipo float."""
+        self.assertEqual(soma(1.79e308, 1.0e308), math.inf)
+
+    def test_robustez_tipo_invalido_string(self):
+        """SO9: Testa a falha esperada ao somar um número com uma string."""
+        with self.assertRaises(TypeError):
+            soma(10, "texto")
+
+    def test_robustez_entrada_nula(self):
+        """SO10: Testa a falha esperada ao somar um número com None."""
+        with self.assertRaises(TypeError):
+            soma(5, None)
     
 
 if __name__ == "__main__":
