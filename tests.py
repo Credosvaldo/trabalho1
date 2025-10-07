@@ -3,8 +3,14 @@ import unittest
 from calculadora import soma, subtracao, multiplicacao, divisao, raiz_quadrada, potencia
 
 class TestCalculadora(unittest.TestCase):
-    def test_divisao(self):
+
+#Casos de Teste - Operação: Divisão
+    def test_divisao_simples(self):
+        """Divisão simples de dois números"""
         self.assertEqual(divisao(10, 2), 5)
+    
+    def test_divisao_com_zero(self):
+        """Divisão onde o denominador é zero"""
 
         with self.assertRaises(ValueError):
             divisao(10, 0)
